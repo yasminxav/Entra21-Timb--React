@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Exercício 1
+    console.log(!10) // false
+    console.log(!!"String") // true
+    console.log(!!2.3) // true
+    console.log(Boolean(null)) // false
+
+    //Exercício 2
+    console.log(10 > 2) // true
+    console.log(5 >= "5") // true
+    //  console.log(5 >== "5") // Erro na página 
+    console.log("apple" > "pineapple") // false
+    console.log("2" > "12") // true
+    console.log(undefined == null) //true
+    console.log(undefined === null) //false
+    console.log(null == "\n0\n") // false
+    console.log(null === +"\n0\n") // false
+
+    //Exercício 3
+    let numero3 = Number(prompt("Digite o valor de A"))
+    
+    if (numero3 > 10)  {
+         console.log(`O valor de ${numero3} é maior que 10 Programa finalizado...`)
+    } else {
+         console.log("Programa finalizado...")
+    }
+
+    //Exercício 4
+    let numero1 = Number(prompt("Digite um número"))
+    if (numero1 % 2 === 0) {
+        let divisão = numero1 / 2 
+        console.log(divisão)
+        console.log("Programa finalizado")
+    } else {
+        console.log("Programa finalizado")
+    }
+    
+
+    // Exercício 5
+    let umnumero = Number(prompt("Digite um número"))
+    if (umnumero % 2 === 0) { 
+    console.log("O número é par") 
+    } else {
+    console.log("O número é ímpar")
+    }
+    
+    // Exercício 6
+    let C = Number(prompt("Digite um número"))
+    
+     if (C > 20 && C < 90) {
+        console.log("O número está na faixa entre 20 e 90")
+    } else {
+        console.log("O número esta fora da faixa")
+    }
+     
+
+    // Atividade 7
+    let A = 10
+    let B = 20
+    Boolean(A > 10 && B <= 20) // ?
+    Boolean(A > 10 || B <= 20) // ?
+    Boolean((A === 10 || B > 20) && B === 20) // ?
+    console.log(null || 2 || undefined) // 2 
+    Boolean(0 && 1) // ?
+
+    // Atividade 8
+    
+    let a = Number(prompt("Digite numero A"))
+    let b = Number(prompt("Digite número B"))
+    let c = Number(prompt("Digite número C"))
+    
+    if (b >= a && b >= c && c <= a) {
+        console.log(`O maior número é ${b}`)
+    } else if (a >= b || b >= c && c <= a) {
+        console.log(`O maior número é ${a}`) 
+    } else if (c >= b || b >= a && c >= a) {
+        console.log(`O maior número é ${c}`)
+    }
+
+    // Ativivdade 9
+    a + b < 4 ? console.log("Abaixo") : console.log("Acima")
+
+    // Atividade 10 
+    let lado1 = Number(prompt("Primeiro Lado"))
+    let lado2 = Number(prompt("Segundo lado"))
+    let lado3 = Number(prompt("Terceiro lado"))
+    if (lado1 == lado2 || lado1 == lado3) {
+        console.log("Triângulo Isóceles")
+    } else if (lado1 == lado2 == lado3) {
+        console.log("Triângulo Equilátero")
+    } else if (lado1 != lado2 != lado3) {
+        console.log ("Triângulo Escaleno")
+    }
+
+    // Atividade 11
+    let numero4 = Number(prompt("Digite o número"))
+    if (número4 >= 0) {
+        let raizQuadrada = numero4 / numero4
+        console.log(raizQuadrada)
+    } else if (numero4 <= 0) {
+        console.log("Número inválido")
+    }
+
+    // Atividade 12
+
+    let numerodiv5 = Number(prompt("Número desejado"))
+    if (numerodiv5 % 5 === 0) {
+        console.log("É divisível")
+    } else {
+        console.log("Não é divisível")
+    }
+
+    
+    // Atividade 13
+    let number = Number(prompt("Número desejado"))
+    if (number >= 0) {
+       console.log(Math.sqrt(number))
+    } else {
+        console.log(number ** 2)
+    }
+
+    // Atividade 14
+    let salario = Number(prompt("Salário"))
+    let prestacao = Number(prompt("Prestação"))
+    let porcentagem = salario / 5
+
+    prestacao > porcentagem ? console.log("Empréstimo não concedido") : console.log("Empréstimo concedido")
+
+
+    // Atividade 15
+    let golstime1 = Number(prompt("Número de gols, primeiro time"))
+    let golstime2 = Number(prompt("Número de gols, segundo time"))
+
+    if (golstime1 > golstime2) {
+        console.log("Vitória time 1")
+    } else if (golstime1 < golstime2) {
+        console.log("Vitória time 2")
+    } else if (golstime1 = golstime2) {
+        console.log("Empate")
+    }
+    
+    // Atividade 16
+    let idade = Number(prompt("Sua idade"))
+    
+    if (idade = 16 || 17) {
+        console.log("Voto opcional")
+    } else if (idade >= 18) {
+        console.log("Voto obrigatório")
+    } else if (idade < 16) {
+        console.log("Não precisa votar")
+    }
+
+    // Atividade 17
+
+    let a1 = Number(prompt("Primeiro numero"))
+    let b2 = Number(prompt("Segundo número"))
+    let c3 = Number(prompt("Terceiro número"))
+    
+    if (a1 > b2 && b2 > c3) {
+        console.log(a1, b2, c3)
+
+    } else if (b2 > a1 && a1 > c3) {
+        console.log(b2, a1, c3)
+
+    } else if (c3 > b2 && b2 > a1 ) {
+        console.log(c3, b2, a1)
+    
+    } else if (a1 > c3 && c3 > b2 ) {
+        console.log(a1, c3, b2) 
+
+    } else if (b2 > c3 && c3 > a1) {
+        console.log(b2, c3, a1)
+
+    } else if (c3 > a1 && a1 > b2) {
+        console.log(c3, a1, b2)
+    
+    }
+    
+    // Atividade 18
+    let numerodia = Number(prompt("Número do dia"))
+    switch (numerodia) {
+        case 1:
+            console.log("O dia é domingo")
+            break;
+        case 2:
+            console.log("O dia é segunda-feira")
+            break;
+        case 3:
+            console.log("O dia é terça-feira")
+            break;
+        case 4:
+            console.log("O dia é quarta-feira")
+            break;
+        case 5:
+            console.log("O dia é quinta-feira")
+            break;
+        case 6:
+            console.log("O dia é sexta-feira")
+            break;
+        case 7:
+            console.log("O dia é sábado")
+            break;
+    }
+
+    // Atividade 19
+    let idadedoador = Number(prompt("Idade"))
+    idadedoador < 18 || idadedoador > 67 ? console.log("Não tem idade para doar") : console.log("Tem idade para doar")
+
+    // Atividade 20
+
+    let numeromes = Number(prompt("Número do mês"))
+    switch (numerodia) {
+        case 1:
+            console.log("O mês é janeiro")
+            break;
+        case 2:
+            console.log("O mês é fevereiro ")
+            break;
+        case 3:
+            console.log("O mês é março")
+            break;
+        case 4:
+            console.log("O mês é abril")
+            break;
+        case 5:
+            console.log("O mês é maio")
+            break;
+        case 6:
+            console.log("O mês é junho")
+            break;
+        case 7:
+            console.log("O mês é julho")
+            break;
+        case 8:
+            console.log("O mês é agosto")
+            break;
+        case 9:
+            console.log("O mês é setembro")
+            break;
+        case 10:
+            console.log("O mês é outubro")
+            break;
+        case 11:
+            console.log("O mês é novembro")
+            break;
+        case 12:
+            console.log("O mês é dezembro")
+            break;
+    }
+
+    // Atividade 21
+
+    let turno = (prompt("Turno que estuda, apenas a inicial"))
+    switch (numerodia) {
+        case "M", "m":
+            console.log("Bom dia!")
+            break;
+        case "V", "v":
+            console.log("Boa tarde!")
+            break;
+        case "N", "n":
+            console.log("Boa noite!")
+            break;
+        default: console.log("Valor inválido")
+            break;
+    }
+
+
+    </script>
+</body>
+</html>

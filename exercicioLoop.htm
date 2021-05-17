@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+         //Atividade 1
+         let j = 0
+        while (j < 10) {
+            console.log("Olá mundo!")
+            j++
+        }
+
+        let i = 0
+        do {
+            console.log("Olá mundo!")
+            i++
+        } while (i < 10)
+
+        
+        for (let i = 0; i < 10; i++) {
+            console.log("Olá mundo!")
+        }
+        
+        
+        
+        
+        //Atividade 2
+        let i = 0 
+        while (i < 10) {
+            console.log(`Estou aparecendo pela ${++i} na tela`)
+        }
+
+        let i = 0 
+        do {
+            console.log(`Estou aparecendo pela ${++i} na tela`)
+        } while (i < 10)
+
+        
+        for (let i = 0; i < 10; i++ ) {
+            console.log(`Estou aparecendo pela ${++i}`)
+        }
+
+        
+        
+        // Atividade 3
+
+        let i = 11 
+        while (i > 0) {
+            console.log(--i)
+        }
+        console.log("Fim")
+        
+        
+        
+        // Atividade 4
+       
+        for (i = 0; i < 3; ++i) {
+            n1 = +prompt("Número positivo")
+            n2 = +prompt("Número negativo")
+            console.log(n1 + n2)
+                continue
+        }
+        
+        
+        // Atividade 5
+        
+        for( i=0 ; i<=100000; i += 1000) {
+            console.log(i);   
+        }
+
+        // Atividade 6
+
+     
+        for( i=0 ; i < 1; ++i) {
+            let valor = Number(prompt("Digite um número"))
+            let valor1 = Number(prompt("Digite um número")) 
+            let valor2 = Number(prompt("Digite um número"))
+            let valor3 = Number(prompt("Digite um número"))
+            let valor4 = Number(prompt("Digite um número"))
+            let somai = valor + valor1 + valor2 + valor3 + valor4;
+            let media = somai / 5;
+            console.log(`Soma: ${somai.toFixed(2)} Média: ${media.toFixed(2)}`);
+        }
+        
+        
+        // Atividade 7
+        
+        let numero = +prompt("Número")
+      
+      for( i=0 ; i <= numero; ++i) {
+            if (i % 2 === 0) {
+              console.log("--");   
+                continue;   
+            }
+          console.log(i)
+        }
+        
+        
+        
+        // Atividade 8
+        let numero = +prompt("Número")
+        
+        for(i=0; i < 11; i++){
+           console.log(numero * i)
+        }
+
+        
+        
+        
+        
+        // Atividade 9
+        quantidadedenegativos = 0
+        
+        for (let i = 0; i < 5; i++) {
+            let valor = +prompt("Digite o valor)")
+            if (valor < 0) {
+                quantidadedenegativos++
+            }
+        
+            console.log(quantidadedenegativos)
+        }
+
+        // Atividade 10
+        
+        pares = 0
+        impares = 0 
+        
+        for( i=1 ; i <= 10; ++i) {
+            let numero = +prompt("Número")
+            if (numero % 2 === 0) {
+                ++pares
+                
+            } else {
+                ++impares
+            }
+        }
+        console.log(`Números pares: ${pares}`)
+        console.log(`Números ímpares: ${impares}`)
+
+        // Atividade 11
+        
+        inintervalo = 0
+        outintervalo = 0
+        
+        for( i=0 ; i < 5; ++i) {
+            let numero = +prompt("Número")
+            if (numero >= 10 && numero <= 20) {
+                ++inintervalo
+            } else {
+               ++outintervalo 
+            }
+        }
+        console.log(`${inintervalo} números estão dentro do intervalo`)
+        console.log(`${outintervalo} números estão fora do intervalo`)
+        
+        // Atividade 12
+        let media = 0
+       let soma = 0 
+        while (true) {
+            let valor = Number(prompt("Digite um número"))
+            ++media
+            if (valor >= 0) {
+                break
+            }
+
+            soma += valor
+        }
+        console.log(soma / media)
+        
+
+        // Atividade 13
+        for (i=0; i <= 15; i++) {
+            console.log(i * 7)
+        }
+
+        // Atividade 14
+        
+        for( i=0 ; i < 5; ++i) {
+            let numero = +prompt("Número")
+            numero *= i
+        
+        }
+
+       // Atividade 15
+       
+                
+
+        // Atividade 21
+        i = 0
+        for (i = 0; i < 110; ++i) {
+            if (i % i === 0) {
+                console.log(i)
+            }
+        }
+
+        //22. Receba 10 números e diga quantos números ímpares e pares esse número contém      
+      
+        for( i=0 ; i <= 10; ++i) {
+            let numero = +prompt("Número")
+            if (numero % 2 === 0) {  
+                let par = numero / 2 
+                console.log(`Números pares: ${par}`); 
+                console.log(`Números ímpares: ${par}`);
+                    continue;   
+            }     
+          let par2 = numero / 2 - 0.5  
+          let impar = numero / 2 + 0.5  
+            console.log(`Números pares: ${par2}`);
+            console.log(`Números ímpar: ${impar}`);
+                    continue;
+        }
+    </script>
+</body>
+</html>

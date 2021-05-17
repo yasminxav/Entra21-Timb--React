@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Exercício 1
+
+        let vetor = []
+        let pares = 0
+        for (let i = 0; 1 < 10; i++) {
+            vetor[i] = +prompt(`Digite o valor ${i + 1}`)
+            if (vetor[i] % 2 === 0) {
+                pares++
+            }
+        }
+        console.log(`O vetor possui ${pares} valores pares`)
+
+        //Exercício 2
+
+        let vetor = []
+        let maior = "Número maior"
+        for (let i = 0; i < 5; i++) {
+            vetor[i] = +prompt("Digite o valor")
+
+            if (vetor[i] >= vetor[0]) {
+                maior = vetor[i]
+                continue
+            }
+            console.log(maior)
+        }
+
+        //  Exercício 3
+
+
+
+        // Exercício 4
+
+        let numeros = []
+
+        for (let i = 0; i < 5; i++) {
+            numeros[i] = +prompt("Digite o número")
+            console.log(numeros[i])
+        }
+
+        console.log("Ordem inversa")
+
+        for (let i = numeros.length - 1; i >= 0; i--) {
+            console.log(numeros[i])
+        }
+
+        // Exercício 5
+
+        let nomes = []
+        let n
+        let achei
+        for (let i = 0; i < 5; i++) {
+            nomes[i] = prompt("Nomes")
+
+        }
+        for (let j = 0; j < 5; j++) {
+            if (j === 0) {
+                n = prompt("Digite um nome")
+            }
+            if (n === nomes[j]) {
+                achei = true
+                break;
+            } else {
+                achei = false
+            }
+        }
+        if (achei === true) {
+            console.log("Achei")
+
+        } else {
+            console.log("Não achei")
+        }
+
+
+        //Exercício 6
+
+        let A = []
+        for (let i = 0; i < 6; i++) {
+            A[i] = +prompt("Digite um número")
+        }
+        soma = A[0] + A[1] + A[5]
+        console.log(soma)
+        A[4] = 100
+        console.log(A)
+
+        //Exercício 7
+
+        let A = []
+        let B = []
+        for (let i = 0; i < 5; ++i) {
+            A[i] = +prompt("Número")
+            B[i] = A[i] ** 2
+        }
+        console.log(A)
+        console.log(B)
+
+
+
+        //Exercício 8
+        let a = []
+            let b = []
+            let s = 0
+            for (let i = 0; i < 6; i++) {
+                a[i] = +prompt("Número")
+
+                if (a[i] % 2 != 0) {
+                    alert("O número deve ser par")
+                    a.splice(i)
+                    i--
+                }
+            }
+            console.log(a)
+
+            for (let j = 5; j >= 0; j--) {
+                b[j] = a[s]
+                s++
+            }
+            console.log(b)
+
+       
+        
+        
+        //Exercício 9
+
+        let a = []
+
+        for (let i = 0; i < 8; ++i) {
+            a[i] = +prompt("Número")
+        }
+
+        let x = prompt("Posição1")
+        let y = prompt("Posição2")
+        switch (x || y) {
+            case String:
+                console.log("Valor inválido")
+                break;
+            case Number:
+                let soma = a[x] + a[y]
+                console.log(soma)
+                break;
+        }
+
+
+        // Exercício 10
+
+        let A = []
+        let negativos = 0
+        let soma = 0
+        for (let i = 0; i < 10; ++i) {
+            A[i] = +prompt("Numero")
+            if (A[i] < 0) {
+                ++negativos
+            }
+            if (A[i] > 0) {
+                soma += A[i]
+            }
+
+        }
+        console.log(`número de negativos:${negativos}; soma de positivos ${soma}. `)
+
+            // Exercício 11
+
+
+            // Exercício 12
+            
+            let a = []
+            let um = 0
+            let dois = 0 
+            let tres = 0
+            let quatro = 0
+            let cinco = 0
+            let seis = 0   
+        
+        
+            for (let i = 0; i < 100; i++) {
+                
+               a[i] = Math.floor(Math.random() * (7 - 1)) + 1;
+                switch(a[i]) {
+                    case 1:
+                        um++
+                        break;
+                    case 2:
+                        dois++
+                        break;
+                    case 3:
+                        tres++
+                        break;
+                    case 4:
+                        quatro++
+                        break;
+                    case 5:
+                        cinco++
+                        break;
+                    case 6:
+                        seis++
+                        break;
+                    default:
+                        break;    
+                }
+                
+
+            }
+            console.log(`Um: ${um};\nDois: ${dois};\nTrês: ${tres};\n Quatro: ${quatro};\n Cinco: ${cinco};\nSeis: ${seis}.`)
+
+
+            // Atividade13
+
+            let a = []
+            let i = 0
+            let soma = 0
+            let maiorNota = 0
+            
+            
+            while (true) {
+              a[i] = +prompt("Nota")    
+              
+              
+              if(a[i] < 0) {
+                break;
+              } else {
+                  
+                    if( a[i] > maiorNota){
+                       maiorNota = a[i]
+                    }
+                
+                soma += a[i]
+                    i++
+            }
+        
+        }
+
+        let media = soma / i 
+        console.log(`média: ${media}; maior nota: ${maiorNota}`)
+
+
+        //Atividade 14
+        let a 
+
+    </script>
+</body>
+</html>

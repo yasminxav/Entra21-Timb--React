@@ -10,42 +10,15 @@
 
 <body>
     <script>
-        let a = []
-        let position
-        let line
-        let valor
-        for (let i = 0; i < 3; i++) {
-            a[i] = []
-            for (let j = 0; j < 3; j++) {
-                a[i][j] = +prompt("Número para a formação da matriz")
-
-            }
-
+        
+        let A = []
+        let B = []
+        for (let i = 0; i < 5; ++i) {
+            A[i] = +prompt("Número")
+            B[i] = Math.sqrt(A[i])
         }
-
-        let x = +prompt("Valor x")
-        seguraAi:
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-
-                if (x === a[i][j]) {
-                    valor = true
-                    line = i
-                    position = j
-                    break seguraAi
-                } else {
-                    valor = false
-                }
-            }
-
-        }
-
-        if (valor === false) {
-            console.log("Valor não encontrado")
-        } else {
-            console.log(`Valor encontrado na linha ${line + 1}; coluna ${position + 1}`)
-        }
-
+        console.log(A)
+        console.log(B)
 
 
     </script>

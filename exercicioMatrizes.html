@@ -1,14 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        
+        // Atividade 1
+        let a = []
+        let maioresQue10 = 0
+        for (let i = 0; i < 3; i++) {
+            a[i] = []
+            for (let j = 0; j < 3; j++) {
+                a[i][j] = +prompt("Digite um número")
+                if (a[i][j] >= 10) {
+                    maioresQue10++
+                }
+            }
+        }
+
+        console.log(`Números maiores que 10: ${maioresQue10}`)
+
+        //Atividade 2
+        //forma 1
+        let a = []
+        let mostrar = ""
+        for (let i = 0; i < 5; i++) {
+            a[i] = []
+            for (let j = 0; j < 5; j++) {
+
+                if (i == j) {
+                    a[i][j] = 1
+                } else {
+                    a[i][j] = 0
+
+                }
+                mostrar += a[i][j] + "\t"
+            }
+            mostrar += "\n"
+        }
+        console.log(mostrar)
+
+        // Atividade 3
+        let a = []
+        let position
+        let line
+        let valor
+        for (let i = 0; i < 3; i++) {
+            a[i] = []
+            for (let j = 0; j < 3; j++) {
+                a[i][j] = +prompt("Número para a formação da matriz")
+
+            }
+
+        }
+
+        let x = +prompt("Valor x")
+        seguraAi:
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+
+                if (x === a[i][j]) {
+                    valor = true
+                    line = i
+                    position = j
+                    break seguraAi
+                } else {
+                    valor = false
+                }
+            }
+
+        }
+
+        if (valor === false) {
+            console.log("Valor não encontrado")
+        } else {
+            console.log(`Valor encontrado na linha ${line + 1}; coluna ${position + 1}`)
+        }
+
     </script>
 </body>
+
 </html>

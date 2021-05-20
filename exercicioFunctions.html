@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        // 1
+        let ehpositivo = numero => numero > 0
+        let numero = +prompt("Digite um número")
+        console.log(ehpositivo(numero))
+
+        // 2
+        let a = +prompt("Digite um número")
+        let b = +prompt("Digite um número")
+
+        function menor(a, b) {
+            if (a < b) {
+                return a
+            } else {
+                return b
+            }
+        }
+        console.log(menor(a, b))
+
+        // 3
+        function potencia(a, b) {
+            return a ** b
+        }
+        let a = +prompt("Digite um número")
+        let b = +prompt("Digite um número")
+        console.log(potencia(a, b))
+
+        // 4
+        function media(nota1, nota2, nota3) {
+            let soma = nota1 + nota2 + nota3
+            return soma / 3
+        }
+        let nota1 = +prompt("Digite a primeira nota")
+        let nota2 = +prompt("Digite a segunda")
+        let nota3 = +prompt("Digite a terceira")
+        console.log(media(nota1, nota2, nota3))
+
+        // 5
+        function conceito(media) {
+            let conceito
+            if (media => 0 && media <= 4.9) {
+                conceito = "D"
+            } else if (media <= 6.9) {
+                conceito = "C"
+            } else if (media <= 8.9) {
+                conceito = "B"
+            } else if (media <= 10) {
+                conceito = "A"
+            }
+            return conceito
+            console.log(conceito)
+        }
+        let media = +prompt("Digite a média e te classificaremos, pequeno gafanhoto")
+        console.log(conceito(media))
+
+        // 6 
+        function pesoIdeal(altura, sexo) {
+            switch (sexo) {
+                case "M":
+                    return altura * 62.1 - 44.7
+                    break;
+                case "H":
+                    return altura * 72.7 - 58
+                    break;
+            }
+        }
+        let sexo = prompt("Sexo")
+        let altura = +prompt("Altura")
+        console.log(pesoIdeal(altura, sexo))
+
+        // 7
+        let vet = []
+        let primeiroESegundoElemento = []
+        
+        function lastFirstElement(vet)
+            let last = vet.length
+            primeiroESegundoElemento.push()
+
+
+
+
+    </script>
+</body>
+
+</html>

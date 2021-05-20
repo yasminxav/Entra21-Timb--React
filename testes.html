@@ -10,17 +10,19 @@
 
 <body>
     <script>
-        
-        let A = []
-        let B = []
-        for (let i = 0; i < 5; ++i) {
-            A[i] = +prompt("Número")
-            B[i] = Math.sqrt(A[i])
+       function pesoIdeal(altura, sexo) {
+            switch (sexo) {
+                case "M":
+                    return altura * 62.1 - 44.7
+                    break;
+                case "H":
+                    return altura * 72.7 - 58
+                    break;
+            }
         }
-        console.log(A)
-        console.log(B)
-
-
+        let sexo = prompt("Sexo")
+        let altura = +prompt("Altura")
+        console.log(pesoIdeal(altura, sexo))
     </script>
 </body>
 

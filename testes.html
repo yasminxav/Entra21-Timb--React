@@ -10,19 +10,21 @@
 
 <body>
     <script>
-       function pesoIdeal(altura, sexo) {
-            switch (sexo) {
-                case "M":
-                    return altura * 62.1 - 44.7
-                    break;
-                case "H":
-                    return altura * 72.7 - 58
-                    break;
-            }
+      "use strict"
+      
+
+      function modificacaodevetor(array) {
+            let arraymodificado = []
+            arraymodificado = array[1] = 10
+            arraymodificado = array[2] = 30
+            return arraymodificado
         }
-        let sexo = prompt("Sexo")
-        let altura = +prompt("Altura")
-        console.log(pesoIdeal(altura, sexo))
+        let array = []
+        for(let i = 0; i < 3; i++) {
+            array[i] = +prompt("Digite um número")
+            }
+            console.log(array)
+            console.log(arraymodificado)
     </script>
 </body>
 

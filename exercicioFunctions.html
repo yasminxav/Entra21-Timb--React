@@ -83,12 +83,59 @@
         let vet = []
         let primeiroESegundoElemento = []
         
-        function lastFirstElement(vet)
-            let last = vet.length
-            primeiroESegundoElemento.push()
+        function lastFirstElement(vet) {
+            let last = vet.length - 1
+           // primeiroESegundoElemento.push(vet[last], vet[0])
+            primeiroESegundoElemento.push(vet[0], vet[last])
+            console.log(primeiroESegundoElemento)
+        }
+        
+        for (let i = 0; i < 4; i++) {
+            vet[i] = +prompt("Digite um número")
+        }
 
+        console.log(lastFirstElement(vet))
 
+        // 8
+        function asteriscos(numero) {
+        console.log('#'.repeat(numero))
+        }
+        let numero = +prompt("Digite um numero")
+        console.log(asteriscos(numero))
 
+        // 9
+        function repetição(elemento, vezes) {
+            let array = []
+            for(let i = 0; i < vezes; i++) {
+                array.push(elemento)
+            }
+            console.log(array)
+        }
+        let elemento = prompt("Elemento")
+        let vezes = prompt("Numero de vezes que deseja que se repita")
+        console.log(repetição(elemento, vezes))
+
+        // 10
+        function idade(anodenascimento) {
+            return  2021 - anodenascimento 
+        }
+        let anodenascimento = +prompt("Ano que nasceu")
+        console.log(idade(anodenascimento))
+
+        // 11
+        
+        function modificacaodevetor(array) {
+            let arraymodificado = []
+            arraymodificado = [array.splice(1, 0, 10)]
+            arraymodificado = [array.splice(2, 0 , 30)]
+            console.log(arraymodificado)
+        }
+        let array = []
+        for(let i = 0; i < 3; i++) {
+            array[i] = +prompt("Digite um número")
+        }
+        console.log(array)
+        console.log(modificacaodevetor(array))
 
     </script>
 </body>

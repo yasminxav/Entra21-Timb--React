@@ -10,21 +10,21 @@
 
 <body>
     <script>
-      "use strict"
-      
-
-      function modificacaodevetor(array) {
-            let arraymodificado = []
-            arraymodificado = array[1] = 10
-            arraymodificado = array[2] = 30
-            return arraymodificado
-        }
-        let array = []
-        for(let i = 0; i < 3; i++) {
-            array[i] = +prompt("Digite um número")
+        "use strict"
+        function toOrder(vetor) {
+            let vetorOrd = vetor.sort()
+            for (let i = 0; i < vetorOrd.lenght - 1; i++) {
+              teste.unshift(vetorOrd[i])  
             }
-            console.log(array)
-            console.log(arraymodificado)
+            return teste
+        }
+        let vetor = []
+        let teste = []
+        for (let i = 0; i < 50; i++) {
+            vetor[i] = Math.floor(Math.random() * (51 - 0)) + 0
+        }
+        console.log(`Vetor Desordenado: ${vetor}`)
+        console.log(`Vetor Ordenado: ${toOrder(vetor)}`)
     </script>
 </body>
 

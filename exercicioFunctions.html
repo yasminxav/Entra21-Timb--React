@@ -123,20 +123,106 @@
         console.log(idade(anodenascimento))
 
         // 11
-        
         function modificacaodevetor(array) {
-            let arraymodificado = []
-            arraymodificado = [array.splice(1, 0, 10)]
-            arraymodificado = [array.splice(2, 0 , 30)]
-            console.log(arraymodificado)
+            array[1] = 10
+            array[2] = 30
+            console.log(`Array modificado: ${array}`)
         }
         let array = []
         for(let i = 0; i < 3; i++) {
             array[i] = +prompt("Digite um número")
         }
-        console.log(array)
-        console.log(modificacaodevetor(array))
+            console.log(`Array antigo: ${array}`)
+            console.log(modificacaodevetor(array))
 
+        // 12
+        function maiorEMenor(vetor) {
+            let maior 
+            let menor 
+            for (let i = 0; i < 50; i++) {  
+                if (i === 0) {
+                maior = vetor[i]
+                menor = vetor[i]                    
+                } else if (vetor[i] > maior) {
+                maior = vetor[i]                    
+                } else if (vetor[i] < menor) {
+                menor = vetor[i]
+                }
+            }
+           return console.log(`${menor} e ${maior}`)
+        }
+        let vetor = []
+        for (let i = 0; i < 50; i++) {
+            vetor[i] = Math.floor(Math.random() * (1001 - 0)) + 0
+        }
+        console.log(vetor)
+        console.log(maiorEMenor(vetor))
+
+        // 13
+        function diasDeIdade(Idade, meses, dias) {
+           return  Idade * 12 * 30 + meses * 30 + dias 
+        }
+        let Idade = +prompt("Digite sua idade")
+        let meses = +prompt("Mês atual em números")
+        let dias = +prompt("Dia atual")
+        console.log(diasDeIdade(Idade, meses, dias))
+
+        // 14
+        function divisores(numero) {
+            let numeroDeVezes = 1
+            for(let i = 0; i < numero; i++) {
+                if(numero % i === 0)
+                numeroDeVezes++
+            }
+           console.log(numeroDeVezes) 
+            
+        }
+        let numero = +prompt("Digite um número inteiro e positivo")
+        console.log(divisores(numero))
+
+        // 15
+
+
+        // 16
+        function perfectNumber(numero) {
+            let soma = 0
+            for(let i = 0; i < numero; i++) {
+                if(numero % i === 0){ 
+                }
+            }
+            soma += numero
+            if(soma === numero)
+            console.log("Este número é perfeito")
+        }
+        let numero = +prompt("Digite o número")
+        console.log(perfectNumber(numero))
+
+        // 17
+        let vetor = []
+        for (let i = 0; i < 50; i++) {
+            vetor[i] = Math.floor(Math.random() * (1001 - 0)) + 0
+
+
+        
+        // 18
+        function bhaskara(a, b, c) {
+              const delta = b * b - 4 * a * c;
+
+                if (a == 0) {
+                    Alert("O valor de a, deve ser diferente de 0");
+                } else if (delta < 0) {
+                    Alert("Sem raízes reais");
+                } else {
+                    const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    console.log(x2, x1, delta)
+                }
+        } 
+        
+        let a = +prompt("Valor de a")
+        let b = +prompt("Valor de b")
+        let c = +prompt("Valor de c")
+        console.log(bhaskara(a, b, c))
     </script>
 </body>
 

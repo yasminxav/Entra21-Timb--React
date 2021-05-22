@@ -263,7 +263,29 @@
         console.log(indiPares(vetor))
 
         // 20
-        
+        function sorteio(numero) {
+            let numeropremiado = Math.floor(Math.random() * (11 - 0)) + 0
+            if (numero === numeropremiado) {
+                return console.log(`Parabéns! O número sorteado foi ${numeropremiado}`)
+            } else { 
+                return console.log(`Que pena! O número sorteado foi ${numeropremiado}`)
+            }
+        }
+        let numero = +prompt("Teste sua sorte. Digite um número de 1 até 10")
+        console.log(sorteio(numero))
+
+        // 21
+        function anoBissexto(ano) {
+            if (ano % 4 === 0 && ano % 100 !== 0 || ano % 400 === 0) {
+                return true                 
+            } else {
+                return false 
+            } 
+        }
+        let ano = +prompt("Digite o ano")
+        console.log(anoBissexto(ano))
+
+
 
     </script>
 </body>

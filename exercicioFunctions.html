@@ -181,7 +181,16 @@
         console.log(divisores(numero))
 
         // 15
+        function fatorial(numero) {
+            let multplicacao = numero
 
+            for (let i = 1; i < numero; i++) {
+                multiplicacao *= i
+            }
+        console.log(multiplicacao)
+        }
+        let numero = +prompt("Número")
+        console.log(fatorial(numero))
 
         // 16
         function perfectNumber(numero) {
@@ -198,9 +207,21 @@
         console.log(perfectNumber(numero))
 
         // 17
+        function toOrder(vetor) {
+        let vetorOrdenado = vetor.sort()
+            console.log("Vetor Ordenado em ordem decrescente")
+            for(let i = 50; i > 0 ; i--) {
+                console.log(vetorOrdenado[i]) 
+            
+            }
+            
+        }
         let vetor = []
         for (let i = 0; i < 50; i++) {
             vetor[i] = Math.floor(Math.random() * (1001 - 0)) + 0
+        }
+        console.log(`Vetor original: ${vetor}`)
+        console.log(toOrder(vetor))
 
 
         
@@ -215,7 +236,7 @@
                 } else {
                     const x1 = (-b + Math.sqrt(delta)) / (2 * a);
                     const x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                    console.log(x2, x1, delta)
+                    console.log(`x1: ${x1}; x2:${x2}; Delta: ${delta}`)
                 }
         } 
         
@@ -223,6 +244,27 @@
         let b = +prompt("Valor de b")
         let c = +prompt("Valor de c")
         console.log(bhaskara(a, b, c))
+
+        // 19 
+        function indiPares(vetor) {
+            let a = []
+            for(let i = 0; i < vetor.length; i++) {
+                if (vetor[i] % 2 === 0 && i % 2 === 0) {
+                 a.push(vetor[i])
+                }       
+            }
+            console.log(a)
+        }
+        let vetor = []
+        for(let i = 0; i < 8; i++) {
+            vetor[i] = +prompt("Número")
+        }
+        console.log(vetor)
+        console.log(indiPares(vetor))
+
+        // 20
+        
+
     </script>
 </body>
 

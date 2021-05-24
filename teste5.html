@@ -8,15 +8,22 @@
 </head>
 <body>
     <script>
-        function anoBissexto(ano) {
-            if (ano % 4 === 0 && ano % 100 !== 0 || ano % 400 === 0) {
-                return true                 
-            } else {
-                return false 
-            } 
+        function conceito(media) {
+            let conceito
+            if (media >= 0 && media < 5) {
+                conceito = "D"
+            } else if (media < 7) {
+                conceito = "C"
+            } else if (media < 9) {
+                conceito = "B"
+            } else if (media <= 10) {
+                conceito = "A"
+            }
+            return conceito
         }
-        let ano = +prompt("Digite o ano")
-        console.log(anoBissexto(ano))
+        let media = +prompt("Digite a média e te classificaremos, pequeno gafanhoto")
+        console.log(conceito(media))
+        
     </script>
 </body>
 </html>

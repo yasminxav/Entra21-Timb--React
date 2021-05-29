@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        function anoBissexto(ano) {
-            if (ano % 4 === 0 && ano % 100 !== 0 || ano % 400 === 0) {
-                return true                 
-            } else {
-                return false 
-            } 
+
+
+
+        function listarAlunos(matriz, matricula, nomeAluno, nota1, nota2, nota3, media) {
+
+            for (let i = 1; i < 4; i++) {
+                for (let j = 0; j < 6; j++) {
+                    
+                    switch (j) {
+                        case 0:
+                            matriz[i][j] = matricula;
+                            continue;
+                        case 1:
+                            matriz[i][j] = nomeAluno;
+                            continue;
+                        case 2:
+                            matriz[i][j] = nota1;
+                            continue;
+                        case 3:
+                            matriz[i][j] = nota2;
+                            continue;
+                        case 4:
+                            matriz[i][j] = nota3;
+                            continue;
+                        case 5:
+                            matriz[i][j] = media;
+                            break;
+                    }
+                }
+                
+            }
+            console.table(matriz)
         }
-        let ano = +prompt("Digite o ano")
-        console.log(anoBissexto(ano))
+
+        let matriz = []
+
+        for (let i = 0; i < 4; i++) {
+            matriz[i] = []
+            for (let j = 0; j < 6; j++) {
+                matriz[i][j] = "--"
+            }
+        }
+        matriz[0][0] = "Matrícula"
+        matriz[0][1] = "Nome do Aluno"
+        matriz[0][2] = "1ª Nota"
+        matriz[0][3] = "2ª Nota"
+        matriz[0][4] = "3ª Nota"
+        matriz[0][5] = "Média"
+
+
+        let matricula = +prompt("Matricula")
+        let nomeAluno = prompt("Nome Aluno")
+        let nota1 = +prompt("Nota 1")
+        let nota2 = +prompt("Nota 2")
+        let nota3 = +prompt("nota 3")
+        let media = +prompt("mediia")
+
+
+
+       listarAlunos(matriz, matricula, nomeAluno, nota1, nota2, nota3, media)
     </script>
 </body>
+
 </html>

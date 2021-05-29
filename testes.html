@@ -11,20 +11,67 @@
 <body>
     <script>
         "use strict"
-        function toOrder(vetor) {
-            let vetorOrd = vetor.sort()
-            for (let i = 0; i < vetorOrd.lenght - 1; i++) {
-              teste.unshift(vetorOrd[i])  
+        function listarAlunos(matriz, matricula, nomeAluno, nota1, nota2, nota3, media) {
+
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 6; j++) {
+                    switch (j) {
+                        case 0:
+                            
+                            matriz.matricula = matricula;
+                        case 1:
+                            matriz.Nome;
+                          
+                            matriz[i][j] = nomeAluno;
+                        case 2:
+                           
+                            matriz.Nota1 = nota1;
+                            matriz[i][j] = nota1
+                        case 3:
+                           
+                            matriz.Nota2 = nota2;
+                            matriz[i][j] = nota2;
+                        case 4:
+                            
+                            matriz.Nota3 = nota3;
+                            matriz[i][j] = nota3
+                        case 5:
+                            matriz.Média = media;
+                            matriz[i][j] = media;
+                        default:
+
+                    }
+                }
             }
-            return teste
+            console.log(matriz)
+            
         }
-        let vetor = []
-        let teste = []
-        for (let i = 0; i < 50; i++) {
-            vetor[i] = Math.floor(Math.random() * (51 - 0)) + 0
+
+        //let matriz = [
+        //     [Matrícula = matricula, Nome = nomeAluno , nota1 = nota1,  ],
+        //]
+
+        let matriz = []
+
+        for (let i = 0; i < 4; i++) {
+            matriz[i] = []
+            for (let j = 0; j < 6; j++) {
+                matriz[i][j] = "--"
+            }
         }
-        console.log(`Vetor Desordenado: ${vetor}`)
-        console.log(`Vetor Ordenado: ${toOrder(vetor)}`)
+
+
+        let matricula = +prompt("Matricula")
+        let nomeAluno = prompt("Nome Aluno")
+        let nota1 = +prompt("Nota 1")
+        let nota2 = +prompt("Nota 2")
+        let nota3 = +prompt("nota 3")
+        let media = +prompt("mediia")
+
+
+
+        listarAlunos(matriz, matricula, nomeAluno, nota1, nota2, nota3, media)
+        console.log(matriz)
     </script>
 </body>
 

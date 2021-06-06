@@ -12,6 +12,20 @@
             matriz.matricula = matricula
             matriz.nome = nome 
         }
+       let vet = []
+        let primeiroUltimoElemento = []
+
+        function lastFirstElement(vet) {
+            let last = vet.length - 1
+            primeiroUltimoElemento.push(vet[0], vet[last])
+            return primeiroUltimoElemento
+        }
+
+        for (let i = 0; i < 4; i++) {
+            vet[i] = +prompt("Digite um número")
+        }
+
+        console.log(`vetor elementos extremos: ${lastFirstElement(vet)}`)
     </script>
 </body>
 </html>

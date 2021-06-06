@@ -49,17 +49,16 @@
         // 5
         function conceito(media) {
             let conceito
-            if (media => 0 && media <= 4.9) {
+            if (media >= 0 && media < 5) {
                 conceito = "D"
-            } else if (media <= 6.9) {
+            } else if (media < 7) {
                 conceito = "C"
-            } else if (media <= 8.9) {
+            } else if (media < 9) {
                 conceito = "B"
             } else if (media <= 10) {
                 conceito = "A"
             }
             return conceito
-            console.log(conceito)
         }
         let media = +prompt("Digite a média e te classificaremos, pequeno gafanhoto")
         console.log(conceito(media))
@@ -81,24 +80,23 @@
 
         // 7
         let vet = []
-        let primeiroESegundoElemento = []
-        
+        let primeiroUltimoElemento = []
+
         function lastFirstElement(vet) {
             let last = vet.length - 1
-           // primeiroESegundoElemento.push(vet[last], vet[0])
-            primeiroESegundoElemento.push(vet[0], vet[last])
-            console.log(primeiroESegundoElemento)
+            primeiroUltimoElemento.push(vet[0], vet[last])
+            return primeiroUltimoElemento
         }
-        
+
         for (let i = 0; i < 4; i++) {
             vet[i] = +prompt("Digite um número")
         }
 
-        console.log(lastFirstElement(vet))
+        console.log(`vetor elementos extremos: ${lastFirstElement(vet)}`)
 
         // 8
         function asteriscos(numero) {
-        console.log('#'.repeat(numero))
+            console.log('#'.repeat(numero))
         }
         let numero = +prompt("Digite um numero")
         console.log(asteriscos(numero))
@@ -106,7 +104,7 @@
         // 9
         function repetição(elemento, vezes) {
             let array = []
-            for(let i = 0; i < vezes; i++) {
+            for (let i = 0; i < vezes; i++) {
                 array.push(elemento)
             }
             console.log(array)
@@ -117,7 +115,7 @@
 
         // 10
         function idade(anodenascimento) {
-            return  2021 - anodenascimento 
+            return 2021 - anodenascimento
         }
         let anodenascimento = +prompt("Ano que nasceu")
         console.log(idade(anodenascimento))
@@ -129,27 +127,27 @@
             console.log(`Array modificado: ${array}`)
         }
         let array = []
-        for(let i = 0; i < 3; i++) {
+        for (let i = 0; i < 3; i++) {
             array[i] = +prompt("Digite um número")
         }
-            console.log(`Array antigo: ${array}`)
-            console.log(modificacaodevetor(array))
+        console.log(`Array antigo: ${array}`)
+        console.log(modificacaodevetor(array))
 
         // 12
         function maiorEMenor(vetor) {
-            let maior 
-            let menor 
-            for (let i = 0; i < 50; i++) {  
+            let maior
+            let menor
+            for (let i = 0; i < 50; i++) {
                 if (i === 0) {
-                maior = vetor[i]
-                menor = vetor[i]                    
+                    maior = vetor[i]
+                    menor = vetor[i]
                 } else if (vetor[i] > maior) {
-                maior = vetor[i]                    
+                    maior = vetor[i]
                 } else if (vetor[i] < menor) {
-                menor = vetor[i]
+                    menor = vetor[i]
                 }
             }
-           return console.log(`${menor} e ${maior}`)
+            return console.log(`${menor} e ${maior}`)
         }
         let vetor = []
         for (let i = 0; i < 50; i++) {
@@ -160,7 +158,7 @@
 
         // 13
         function diasDeIdade(Idade, meses, dias) {
-           return  Idade * 12 * 30 + meses * 30 + dias 
+            return Idade * 12 * 30 + meses * 30 + dias
         }
         let Idade = +prompt("Digite sua idade")
         let meses = +prompt("Mês atual em números")
@@ -170,12 +168,12 @@
         // 14
         function divisores(numero) {
             let numeroDeVezes = 1
-            for(let i = 0; i < numero; i++) {
-                if(numero % i === 0)
-                numeroDeVezes++
+            for (let i = 0; i < numero; i++) {
+                if (numero % i === 0)
+                    numeroDeVezes++
             }
-           console.log(numeroDeVezes) 
-            
+            console.log(numeroDeVezes)
+
         }
         let numero = +prompt("Digite um número inteiro e positivo")
         console.log(divisores(numero))
@@ -187,7 +185,7 @@
             for (let i = 1; i < numero; i++) {
                 multiplicacao *= i
             }
-        console.log(multiplicacao)
+            console.log(multiplicacao)
         }
         let numero = +prompt("Número")
         console.log(fatorial(numero))
@@ -195,51 +193,46 @@
         // 16
         function perfectNumber(numero) {
             let soma = 0
-            for(let i = 0; i < numero; i++) {
-                if(numero % i === 0){ 
+            for (let i = 0; i < numero; i++) {
+                if (numero % i === 0) {
                 }
             }
             soma += numero
-            if(soma === numero)
-            console.log("Este número é perfeito")
+            if (soma === numero)
+                console.log("Este número é perfeito")
         }
         let numero = +prompt("Digite o número")
         console.log(perfectNumber(numero))
 
         // 17
         function toOrder(vetor) {
-        let vetorOrdenado = vetor.sort()
-            console.log("Vetor Ordenado em ordem decrescente")
-            for(let i = 50; i > 0 ; i--) {
-                console.log(vetorOrdenado[i]) 
-            
-            }
-            
+            let vetorOrdenado = vetor.sort(function (a, b) { return b - a })
+            return vetorOrdenado
         }
         let vetor = []
         for (let i = 0; i < 50; i++) {
-            vetor[i] = Math.floor(Math.random() * (1001 - 0)) + 0
+            vetor[i] = Math.floor(Math.random() * (51 - 1)) + 1
         }
         console.log(`Vetor original: ${vetor}`)
-        console.log(toOrder(vetor))
+        console.log(`Vetor Ordenado em ordem decrescente ${toOrder(vetor)}`)
 
 
-        
+
         // 18
         function bhaskara(a, b, c) {
-              const delta = b * b - 4 * a * c;
+            const delta = b * b - 4 * a * c;
 
-                if (a == 0) {
-                    Alert("O valor de a, deve ser diferente de 0");
-                } else if (delta < 0) {
-                    Alert("Sem raízes reais");
-                } else {
-                    const x1 = (-b + Math.sqrt(delta)) / (2 * a);
-                    const x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                    console.log(`x1: ${x1}; x2:${x2}; Delta: ${delta}`)
-                }
-        } 
-        
+            if (a == 0) {
+                Alert("O valor de a, deve ser diferente de 0");
+            } else if (delta < 0) {
+                Alert("Sem raízes reais");
+            } else {
+                const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                console.log(`x1: ${x1}; x2:${x2}; Delta: ${delta}`)
+            }
+        }
+
         let a = +prompt("Valor de a")
         let b = +prompt("Valor de b")
         let c = +prompt("Valor de c")
@@ -248,15 +241,15 @@
         // 19 
         function indiPares(vetor) {
             let a = []
-            for(let i = 0; i < vetor.length; i++) {
+            for (let i = 0; i < vetor.length; i++) {
                 if (vetor[i] % 2 === 0 && i % 2 === 0) {
-                 a.push(vetor[i])
-                }       
+                    a.push(vetor[i])
+                }
             }
             console.log(a)
         }
         let vetor = []
-        for(let i = 0; i < 8; i++) {
+        for (let i = 0; i < 8; i++) {
             vetor[i] = +prompt("Número")
         }
         console.log(vetor)
@@ -267,7 +260,7 @@
             let numeropremiado = Math.floor(Math.random() * (11 - 0)) + 0
             if (numero === numeropremiado) {
                 return console.log(`Parabéns! O número sorteado foi ${numeropremiado}`)
-            } else { 
+            } else {
                 return console.log(`Que pena! O número sorteado foi ${numeropremiado}`)
             }
         }
@@ -277,10 +270,13 @@
         // 21
         function anoBissexto(ano) {
             if (ano % 4 === 0 && ano % 100 !== 0 || ano % 400 === 0) {
-                return true                 
+                return true
+                return confirm("O ano é bissexto")
             } else {
-                return false 
-            } 
+                return confirm("O ano não é bissexto")
+                return false
+            }
+            console.log
         }
         let ano = +prompt("Digite o ano")
         console.log(anoBissexto(ano))

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+        let vetor = [1, 2, 3, 4]
+        function embaralharvetor(vetor){
+            for (let i = vetor.lenght - 1; i < 0; i--) {
+                let posicão = Math.floor(Math.random() * (i + 1))
+                
+                let aux = vetor[i]
+                vetor[i] = vetor[j]
+                vetor[j] = aux
+                
+            }
+           console.log(`Embaralhado: ${vetor}`)
+        }
+
+        embaralharvetor(vetor)
+
+        //2
+        function onlyOnes(vetor) {
+            let vetorm = []
+                for(let item of vetor) {
+                    if(!vetorm.includes(item)) {
+                        vetorm.push(item)
+                    }
+                
+                }
+                return vetorm
+        }
+        
+        for(let i = 0; i < 6; i++) {
+            let vetor = +prompt("Digite um elemento do vetor") 
+        }
+
+        // 3
+        
+
+
+
+
+    </script>
+</body>
+</html>

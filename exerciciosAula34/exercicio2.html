@@ -1,0 +1,49 @@
+<head>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div-legenda {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>            
+    <div id="div-legenda">Adicione uma legenda nesse elemento</div>
+    <script>
+        
+        let quadrado = document.getElementById("div-legenda")
+        
+        function mostrarLegenda(div, posicao, html) {
+            let legenda = document.createElement("div")
+            posicao = "direita"
+            
+            legenda.style.cssText = "position: absolute; color: blue";
+            //legenda.style.left = Math.round(div.clientWidth) + "px"
+            //legenda.style.top = Math.round(div.clientHeight) + "px"
+            legenda.textContent="legenda"
+            let x = window.pageXOffset
+            let y = window.pageYOffset 
+
+            switch (posicao) {
+                case "em cima":
+                    legenda.style.left = Math.round(x.clientWidth / 2 - legenda.clientWidth / 2) + "px"
+                    legenda.style.top = Math.round(quadrado.clientHeight ) + "px"
+                    break;
+                case "direita":
+                    legenda.style.left = Math.round(y.clientWidth / 2 - legenda.clientWidth / 2) + "px"
+                    legenda.style.top = Math.round(quadrado.clientHeight + 10) + "px"
+                    break;
+            }
+            document.body.append(legenda)
+        }
+        mostrarLegenda(quadrado)
+        
+    </script>
+</body>

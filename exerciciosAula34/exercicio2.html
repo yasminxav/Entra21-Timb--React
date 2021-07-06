@@ -22,9 +22,9 @@
         
         function mostrarLegenda(div, posicao, html) {
             let legenda = document.createElement("div")
-            posicao = "direita"
+            posicao= prompt("Posição");
             
-            legenda.style.cssText = "position: absolute; color: blue";
+            legenda.style.cssText = "position: absolute; color: red";
             //legenda.style.left = Math.round(div.clientWidth) + "px"
             //legenda.style.top = Math.round(div.clientHeight) + "px"
             legenda.textContent="legenda"
@@ -32,13 +32,21 @@
             let y = window.pageYOffset 
 
             switch (posicao) {
-                case "em cima":
+                case "em cima" :
                     legenda.style.left = Math.round(x.clientWidth / 2 - legenda.clientWidth / 2) + "px"
                     legenda.style.top = Math.round(quadrado.clientHeight ) + "px"
                     break;
-                case "direita":
-                    legenda.style.left = Math.round(y.clientWidth / 2 - legenda.clientWidth / 2) + "px"
-                    legenda.style.top = Math.round(quadrado.clientHeight + 10) + "px"
+                case "direita" :
+                    legenda.style.left = Math.round(windowWidth / 2) + "px"
+                    legenda.style.top = Math.round(quadrado.clientWidth) + "px"
+                    break;
+                case "esquerda" :
+                    legenda.style.top = Math.round(quadrado.clientHeight ) + "px"
+                    legenda.style.left = Math.round(x.clientWidth / 2 - legenda.clientWidth / 2) + "px"
+                    break;
+                case "em baixo" :
+                    legenda.style.left = Math.round(y.clientHeight / 3 ) + "px"
+                    legenda.style.top = Math.round(quadrado.clientWidth / 2) + "px"
                     break;
             }
             document.body.append(legenda)

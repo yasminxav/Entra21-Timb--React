@@ -1,0 +1,23 @@
+<body>
+    <input type="button" id="esconder" value="Click para esconder/mostrar o texto" />            
+    <div id="text">Texto</div>
+    <script>
+        let quadrado = document.querySelector("div")
+        let buttom = document.querySelector("input")
+        function esconderTexto() {
+            quadrado.style.cssText = "display: none;"
+         
+        }
+        function Texto() {
+            if (quadrado.style = "display: none;") {
+                quadrado.style.display = "block"
+            }
+        }
+
+        buttom.addEventListener("click" , esconderTexto)
+        buttom.addEventListener("click" , Texto)
+
+
+
+    </script>
+</body>

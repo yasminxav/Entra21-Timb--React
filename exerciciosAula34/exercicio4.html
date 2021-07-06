@@ -1,0 +1,64 @@
+<head>
+    <style>
+        .campo {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            background-color: green;
+            border: 10px solid black;
+        }
+
+        .bola {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="campo">
+        <div class="bola"></div>
+    </div>
+    <script>
+        
+        function mexer() {
+            let bola = document.querySelector(".bola")
+            let xPosition = e.clientX;
+            let yPosition = e.clientY;
+            bola.style.widht = xPosition
+            bola.style.height = yPosition
+            
+        }
+
+
+
+        <html>
+
+<script type="text/javascript">
+window.onload = init;
+function init() {
+	if (window.Event) {
+	document.captureEvents(Event.MOUSEMOVE);
+	}
+	document.onmousemove = getCursorXY;
+}
+
+function getCursorXY(e) {
+	document.getElementById('cursorX').value = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+	document.getElementById('cursorY').value = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+}
+</script>
+
+<body>
+
+<input type="text" id="cursorX" size="3"> X-position of the mouse cursor
+<br /><br />
+<input type="text" id="cursorY" size="3"> Y-position of the mouse cursor
+
+</body>
+</html>
+
+    </script>
+</body>

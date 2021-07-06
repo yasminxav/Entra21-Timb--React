@@ -1,4 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
         body {
             height: 100vh;
@@ -14,44 +19,45 @@
         }
     </style>
 </head>
-<body>            
-    <div id="div-legenda">Adicione uma legenda nesse elemento</div>
-    <script>
-        
-        let quadrado = document.getElementById("div-legenda")
-        
-        function mostrarLegenda(div, posicao, html) {
-            let legenda = document.createElement("div")
-            posicao= prompt("Posição");
+<body>           
+        <div id="div-legenda">Adicione uma legenda nesse elemento</div>
+        <script>
             
-            legenda.style.cssText = "position: absolute; color: red";
-            //legenda.style.left = Math.round(div.clientWidth) + "px"
-            //legenda.style.top = Math.round(div.clientHeight) + "px"
-            legenda.textContent="legenda"
-            let x = window.pageXOffset
-            let y = window.pageYOffset 
-
-            switch (posicao) {
-                case "em cima" :
-                    legenda.style.left = Math.round(x.clientWidth / 2 - legenda.clientWidth / 2) + "px"
-                    legenda.style.top = Math.round(quadrado.clientHeight ) + "px"
-                    break;
-                case "direita" :
-                    legenda.style.left = Math.round(windowWidth / 2) + "px"
-                    legenda.style.top = Math.round(quadrado.clientWidth) + "px"
-                    break;
-                case "esquerda" :
-                    legenda.style.top = Math.round(quadrado.clientHeight ) + "px"
-                    legenda.style.left = Math.round(x.clientWidth / 2 - legenda.clientWidth / 2) + "px"
-                    break;
-                case "em baixo" :
-                    legenda.style.left = Math.round(y.clientHeight / 3 ) + "px"
-                    legenda.style.top = Math.round(quadrado.clientWidth / 2) + "px"
-                    break;
+            let quadrado = document.getElementById("div-legenda")
+            let legenda = document.createElement("div")
+            
+            function mostrarLegenda(quadrado, posicao, html) {
+                let legenda = document.createElement("div")
+                posicao= prompt("Posição");
+                
+                legenda.style.cssText = "position: absolute; color: red";
+                legenda.textContent="legenda"
+                let x = window.innerWidth
+                let y = window.innerHeight
+    
+                switch (posicao) {
+                    case "em cima" :
+                        legenda.style.left = Math.round(x.clientWidth / 2 - legenda.offsetWidth / 2) + "px"
+                        legenda.style.top = Math.round(quadrado.clientHeight ) + "px"
+                        break;
+                    case "direita" :
+                        legenda.style.left = Math.round(x / 2 + quadrado.clientHeight / 2) + "px"
+                        legenda.style.top = Math.round(y.clientHeight / 2) + "px"
+                        break;
+                    case "esquerda" :
+                        legenda.style.left = Math.round(x / 2 - quadrado.clientWidth / 2 - 60) + "px"
+                        legenda.style.top = Math.round(y.clientHeight / 2) + "px"
+                        break;
+                    case "em baixo" :
+                        legenda.style.left = Math.round(x.clientWidth / 2 - legenda.offsetWidth / 2 ) + "px"
+                        legenda.style.top = Math.round(y - quadrado.clientHeight) + "px"
+                        break;
+                }
+                document.body.append(legenda)
             }
-            document.body.append(legenda)
-        }
-        mostrarLegenda(quadrado)
-        
-    </script>
+            mostrarLegenda(quadrado)
+            
+        </script>
+    </body>
 </body>
+</html>

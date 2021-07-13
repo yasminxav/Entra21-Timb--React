@@ -1,27 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    div {
-        height: 100px;
-        width: 100px;
-        position: absolute;
-    }
-    textarea{
-        display: none;
-    }   
-</style>
-<body>
-    <div><textarea></textarea></div>
-</body>
-<script>
-    let quadrado = document.querySelector('div')
-    quadrado.addEventListener("focus", () => {
-               textarea.style.display = "block"
+    <head>
+        <meta charset="utf-8"/>
+        <title>Form validation: Tarefa 1</title>
+        <style>
+            body {                
+                color: #333;
+                font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+                padding: 1em;
+                margin: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body>
+    <h2>Envie seu comentário</h2>
+    <form>        
+        <ul>
+            <li>
+                <label for="uname">Nome de usuário</label>
+                <input type="text" name="uname" id="uname" minlenght="5" maxlenght="20" required>
+            </li>
+            <li>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </li>
+            <li>
+                <label for="phone">Telefone:</label>
+                <input type="number" name="phone" id="phone" size="15" required>
+            </li>
+            <li>
+                <label for="comment">Comentário:</label>
+                <textarea name="comment" id="comment" size="200" required>
+                </textarea>
+            </li>
+            <li>
+                <input type="submit" value="Enviar comentário">
+            </li>
+        </ul>
+    </form>
+
+    <script>
+        let email = document.querySelector("#email")
+        let nome = document.querySelector("#uname")
+
+        nome.addEventListener("blur", () => {
+            if(!nome.minLenght < 5) {
+                console.log("Digite um nome")
+            }
         })
-</script>
+
+        email.addEventListener("blur", () => {
+            if (!email.value.includes("@")) {
+                let mensagem = document.createElement("div")
+                mensagem.textContent="Email Inválido"
+                mensagem.style.cssText = "position: absolute; color: red;"
+                document.body.append(mensagem)
+            } else {
+                mensagem.remove()
+            }
+        })
+        
+        /*
+        Adicione alguns recursos de validação ao formulário:
+
+        * Faça com que todos os campos de entrada sejam obrigatórios para preencher antes que o 
+        formulário possa ser enviado.
+        
+        * Altere o tipo dos campos "Endereço de e-mail" e "Número de telefone" para que o navegador 
+        aplique uma validação mais específica adequada aos dados solicitados.
+        Alterar a mensagem de email: "E-mail inválido"
+
+        * Atribua ao campo "Nome de usuário" um comprimento obrigatório de 5 a 20 caracteres, ao campo
+        "Número de telefone" um comprimento máximo de 15 caracteres e ao campo "Comentário" um 
+        comprimento máximo de 200 caracteres.
+        
+        * Tente enviar seu formulário - ele deve se recusar a enviar até que as restrições acima sejam 
+        seguidas e fornecer mensagens de erro adequadas. Para ajudar, você pode querer adicionar alguns 
+        estilos CSS simples para mostrar quando um campo de formulário é válido ou inválido.
+        */
+    </script>
+  </body>
 </html>

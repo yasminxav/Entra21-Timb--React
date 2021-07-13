@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .batata{
+            display: flex;
+            background-color: white;
+            padding: 20px;
+            z-index: 2;
+            width: 900px;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>PÃO</h2>
+    <button class="queijo">Abrir modal</button>
+    <div class = "modal">
+        <div class="batata">
+            <p>Maionese</p>
+            <input type="text" id="presunto">            
+            <button>Ok</button>
+            <button>Cancelar</button>
+        </div>
+    </div>
+    <script>        
+        let butao = document.querySelector(".queijo") 
+        let div = document.querySelector(".modal")
+        
+        
+        
+        
+        function abrirModal()  {
+            div.style.display = "block"
+            console.log("div")
+        }
+        
+        function fecharModal (){}
+
+        butao.addEventListener("click", abrirModal)
+
+        
+        /*
+        Exercício
+
+        Crie uma função mostrarModal(html, callback) que mostra um form que contenha a mensagem
+        passada no parâmetro <html>, um <input type="text"> e botões de OK/Cancelar.
+
+        * O usuário deve digitar alguma coisa no input de texto e pressionar Enter ou OK, então
+        a função callback será chamada passado o valor digitado callback(valor)
+
+        * Se o usuário pressionar Esc ou Cancelar, então a callback será chamada passando null.
+
+        Em ambos os casos o form irá sumir da tela.
+
+        Requisitos:
+
+        1. O form deve estar no centro da tela.
+        2. O form deve ser um modal. Em outras palavras, a interação com o resto da página só é possível
+        quando o usuário fecha o form.
+        3. Quando o form é criado o focus deve estar no input        
+        */
+    </script>
+</body>
+</html>

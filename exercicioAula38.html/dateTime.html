@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //1
+        let time = new Date("February 20, 2012 3:12:00")
+        console.log(time)
+
+        let data = new Date(2012, 1, 20, 3, 12)
+        console.log(data)
+
+        //2 
+        function ObtemDiadaSemana() {
+            let day = new Date()
+            let dayOfWeeK = (day.getDay())
+
+            switch (dayOfWeeK) {
+                case 0:
+                    console.log("Domingo")
+                    break;
+                case 1:
+                    console.log("Segunda-feira")
+                    break;
+                case 2:
+                    console.log("Terça-feira")
+                    break;
+                case 3:
+                    console.log("Quarta-feira")
+                    break;
+                case 4:
+                    console.log("Quinta-feira")
+                    break;
+                case 5:
+                    console.log("Sexta-feira")
+                    break;
+                case 6:
+                    console.log("Sábado")
+                    break;
+            }
+        }
+        ObtemDiadaSemana()
+
+        //3
+        let ano = 2012
+        let mes = 3
+
+        function obtemUltimoDiaMes(ano, mes) {
+            let lastDay = new Date(ano, mes + 1, 0)
+
+            console.log(lastDay.getMonth() + 1, lastDay.getDate())
+
+        }
+        obtemUltimoDiaMes(ano, mes)
+
+        //4
+
+        function obtemSegundos() {
+            let date = new Date()
+            let resultado = date.getHours() * 60 * 60 + date.getMinutes() * 60 + date.getSeconds()
+
+            console.log(resultado)
+        }
+        obtemSegundos()
+
+        //5
+
+        function segundosParaAmanha() {
+            let date = new Date()
+            let resultado = (24 * 60 * 60) - (date.getHours() * 60 * 60 + date.getMinutes() * 60 + date.getSeconds())
+            console.log(resultado)
+            
+        }
+        segundosParaAmanha()
+
+        //6
+        
+        /*
+        6) Escreva a função formataData(data). Ela deve formatar a data
+       da seguinte maneira:
+       * Se desde a data passou menos de 1 segundo -> "agora"
+       * Se desde a data passou menos de 1 minuto -> "n segundos atrás" onde n é a quantidade de segundos
+       * Se desde a data passou menos de 1 hora -> "m minutos atrás" onde m é a quantidade de minutos
+       * Nos outros casos a data deve ser apresentada no seguinte formato: "DD.MM.YY HH:mm" 
+         Ex.: 28.06.21 10:00
+         Testes:
+         formatDate(new Date(new Date - 1)) // agora
+         formatDate(new Date(new Date - 30 * 1000)) // 30 segundos atras
+         formatDate(new Date(new Date - 5 * 60 * 1000)) // 5 minutos atrás
+       */
+      
+        travellTime = new Date(2021, 6, 15, 10, 33)
+        
+        
+        
+        
+        let diasAtuais = new Date()
+        
+        
+        function formataData(diasAtuais) {
+            let ano = +prompt("Digite ano")
+            let mes = +prompt("Digite mês")
+            let dias = +prompt("Digite dias")
+            let horas = +prompt("Digite horas")
+            let minutos = +prompt("Digite minutos")
+            let segundos = +prompt("Digite segundos")
+
+            let travellTime = new Date(ano, mes, dias, horas, minutos, segundos)
+            console.log(travellTime)
+
+            
+            //-----------DATA ATUAL--------------
+            let ano2 = 2021
+            let mes = 6
+            let dias2 = 15
+            let horas2 = 11
+            let minutos2 = 10
+            let segundos2 = 20
+                
+                
+            //---------Calculo-------------
+                if (minutos != minutos2) {
+                    let minutos3 = minutos2 * segundos
+                    console.log(minutos3)
+                } else if (horas != horas2){
+                    let horas3 = horas 
+                }
+
+
+        }
+        formataData()
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Escreva o tempo para fazer a contagem</p>
+    <input type ="time">
+    <button>Ok</button>
+    <script>
+        /*
+       Exercícios
+       1) Escreva a função imprimeNumeros(comeco, fim) que mostre um número a cada segundo, começando
+       do comeco até o fim.
+       Faça duas variantes da solução:
+       1. Usando setInterval
+       2. Usando setTimeout
+
+       2) Utilizando setInterval faça um relógio que obtenha o horário atual
+       e faça ele aparecer na tela no formato: 
+       hh:mm:ss
+       
+       3) Faça um timer através da função criaTimer(tempo, callback) que receba o valor inicial através de um <input type="time"> 
+       e dispare uma função callback quando o tempo acabar.
+       
+       4) Crie um cronômetro que contenha:
+           - Botão de início - iniciar o cronômetro.
+           - Botão de parar - parar o cronômetro.
+           - Botão de reset - resetar o tempo para 0.
+           - Display que mostra o número de segundos passados.
+       */
+
+        //1
+        //A
+        // let comeco = +prompt("Valor inicial"),
+        //     fim = +prompt("Valor final")
+
+        // function imprimeNumeros(comeco, fim) {
+        //     setTimeout(() => {
+        //         console.log(comeco)
+        //         comeco++
+        //         if (comeco <= fim) {
+        //             imprimeNumeros(comeco, fim)
+        //         }
+        //     }, 1000);
+        // }
+        // imprimeNumeros(comeco, fim)
+
+        // //B
+        // function imprimeInterval(comeco, fim) {
+        //     setInterval(() => {
+        //         if (comeco <= fim){
+        //             console.log(comeco)
+        //             comeco++
+        //         }
+        //     }, 1000);
+        // }
+
+        //2
+        // setInterval(() => {
+        //     let agora = new Date()
+        //     console.log(`${agora.getHours()}:${agora.getMinutes()}:${agora.getSeconds()}`)
+        // }, 1000);
+
+
+        //3
+        let butao = document.querySelector('button')
+
+        butao.addEventListener("click", () => {
+            let input = document.querySelector('input')
+            criarTimer(converter(input.value), mensagem)
+        })
+
+        function criarTimer(tempo, callback) {
+            setInterval(() => {
+                if (tempo <= 0) {
+                    alert("Acabou o tempo")
+                } else {
+                    console.log(tempo)
+                    tempo--
+                }
+            }, 1000);
+        }
+
+        function mensagem() {
+            return alert("O tempo acabou")
+        }
+
+        function converter(string) {
+            let [a, b] = string.split(":")
+            let minutos = +a / 60
+            let segundos = +b
+            return minutos + segundos
+        }
+    </script>
+</body>
+
+</html>

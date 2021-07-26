@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Aluno {     
+            constructor(nome, matricula, notaProva, notaProva2, notaTrabalho) {
+                this.nome = nome;
+                this.matricula = matricula;
+                this.notaProva	= notaProva;
+                this.notaProva2 = notaProva2;
+                this.notaTrabalho = notaTrabalho;
+            }
+            media() {
+              const media = ((this.notaProva * 3) + (this.notaProva2 * 3) + (this.notaTrabalho * 2) / 8)
+                return media
+            }
+            final() {
+                if(media < 6) {
+                    console.log("Reprovado")
+                } else {
+                    console.log("Aprovado")
+                }
+            } 
+        }
+
+        let nome = +prompt("Nome:")
+        let matricula = +prompt("Matrícula:")
+        let notaProva = +prompt("Nota prova1:")
+        let notaProva2 = +prompt("Nota prova2:")
+        let notaTrabalho = +prompt("Nota trabalho1:")
+        
+        let aluno = new Aluno(nome, matricula, notaProva, notaProva2, notaTrabalho)
+
+        console.log(aluno.media())
+        console.log(aluno.final())
+        
+    </script>
+</body>
+</html>

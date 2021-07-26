@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Funcionario {
+            constructor(matricula, nome, sobrenome) {
+                this.nome = nome
+                this.matricula = matricula
+                this.salario = salario
+                
+                if (this.#validaMatricula(matricula)) {
+                    throw "Matricula inválida"
+                }
+                if (this.#validaNome(nome)) {
+                    throw "Nome inválido"
+                }
+                if (this.#validaSalario(salario)) {
+                    throw "Salário inválido"
+                } 
+
+            }
+            
+            #validaNome(nome) {
+                if(nome <= 50 && nome >= 4) {
+
+                }
+            }
+            #validaMatricula(matricula) {
+                return matricula
+            }
+            #validaSalario(salario) {
+                return salario
+            }
+            
+        }
+
+        let funcionario = new Funcionario("12.5", "Pedro", 700) // Uncaught Matrícula inválida
+
+
+        
+    </script>
+</body>
+</html>

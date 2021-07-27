@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Imovel {
+            constructor(endereco, preco) {
+                this.endereco = endereco;
+                this.preco = preco;
+            }
+        }
+        class Novo extends Imovel {
+            #adicional;
+
+            constructor(endereco, preco, adicional) {
+                super(endereco, preco);
+                this.#adicional = adicional;
+            }
+
+            get valorAdicional() {
+                return this.#adicional;
+            }
+
+            impressao() {
+                return `valor adicional: ${this.valorAdicional}`;
+            }
+
+            calculaTotal() {
+                return `Valor total com adicional: ${this.preco + this.valorAdicional}`;
+            }
+        }
+
+        class Velho extends Imovel {
+            #desconto;
+
+            constructor(endereco, preco, desconto) {
+                super(endereco, preco);
+                this.#desconto = desconto;
+            }
+
+            get valorDesconto() {
+                return this.#desconto;
+            }
+
+            impressao() {
+                console.log(`Valor de desconto ${this.#desconto}`);
+            }
+
+            calculaTotal() {
+                return `Valor total com desconto: ${this.preco - this.desconto}`;
+            }
+        }
+
+        let novo = new Novo("A", 10, 10);
+        novo.calculaTotal()
+        let velho = new Velho("A", 20, 10);
+        velho.calculaTotal()
+    </script>
+</body>
+
+</html>

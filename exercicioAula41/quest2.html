@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Relogio {
+            constructor(formato) {
+                this.formato = formato
+            }
+            renderizar() {
+                let data = new Date()
+                let horas = data.getHours()
+                if (horas < 10) horas = "0" + horas
+                let minutos = data.getMinutes()
+                if (minutos < 10) minutos = "0" + minutos
+                let segundos = data.getSeconds()
+                if (segundos < 10) segundos = "0" + segundos
+                let resultado = this.formato
+                    .replace("h", horas)
+                    .replace("m", minutos)
+                    .replace("s", segundos)
+                
+                console.log(resultado)
+            }
+            parar() {
+                clearInterval(this.timer)
+            }
+            comecar() {
+                this.renderizar()
+                this.timer = setInterval(() => this.renderizar(), 1000)
+                setInterval(() => console.clear(), 1070)
+            }
+        }
+        let timer1 = new Relogio("h:m:s")
+        timer1.comecar()
+
+        class Precisão extends Relogio {
+            constructor(formato, ms) {
+                super(formato)
+                this.ms = ms
+                
+            }
+        }
+    </script>
+</body>
+</html>

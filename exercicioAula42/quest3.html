@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function somar(n1, n2) {
+            let resultado = n1 + n2
+            if (resultado / 2 == 0) {
+                throw new Error("Finalizando o programa...")
+            }
+        }
+        let n1 = 2
+        let n2 = 2
+        
+        try {
+            somar(n1, n2)
+        } catch (error) {
+            console.log(error)
+        }
+   
+    </script>
+</body>
+</html>

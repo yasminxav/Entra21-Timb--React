@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Produto {
+                constructor(nomeLoja, preco, descricao){
+                    this.nomeLoja = nomeLoja
+                    this.preco = preco
+                    this.descricao = descricao 
+            }
+            getDescricao() {
+                return "Produto de Informática"
+            }
+        }
+        class Mouse extends Produto {
+            constructor(nomeLoja, preco, descricao, tipo){
+                super(nomeLoja, preco, descricao)
+                this.tipo = tipo
+            }
+            getDescricao() {
+                return `Mouse( ${this.nomeLoja}, ${this.preco},00, ${this.descricao}, ${this.tipo})`
+            }
+        }
+        
+        class Livro extends Produto  {
+            constructor(nomeLoja, preco, descricao, autor){
+                super(nomeLoja, preco, descricao)
+                this.autor = autor
+            }
+            getDescricao() {
+                return `Livro( ${this.nomeLoja}, ${this.preco},00, ${this.descricao}, ${this.autor})`
+            }
+        }
+
+        let novoMouse = new Mouse ("Kabum", 50, "Mouse ótico, Saída USB. 1.600 dpi", "Gamer")
+        let novoLivro = new Livro ("Submarino", 30, "Crônicas de Nárnia, capa dura", "Fantasia")
+        let novoLivro2 = new Livro("Submarino", 40, "Senhor dos Anéis, capa dura", "Fantasia")
+        let novoMouse2 = new Mouse("Kabum", 60, "Mouse sem fio, led colorido", "Gamer")
+        let novoLivro3 = new Livro("Submarino", 30, "Bob Esponja", "Infantil")
+
+        let carrinho = [novoMouse, novoLivro, novoMouse2, novoLivro2, novoLivro3]
+
+        for (const produto of carrinho) {
+            console.log(produto.getDescricao())
+        }
+    </script>
+</body>
+</html>

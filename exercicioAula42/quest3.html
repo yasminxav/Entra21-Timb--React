@@ -7,19 +7,33 @@
 </head>
 <body>
     <script>
-        function somar(n1, n2) {
-            let resultado = n1 + n2
-            if (resultado / 2 == 0) {
-                throw new Error("Finalizando o programa...")
+        class OddNumberError extends Error {
+            constructor(message) {
+                super(message)
+                this.name = "OddNumberError"
             }
         }
-        let n1 = 2
-        let n2 = 2
+        
+        function somar(n1, n2) {
+            let resultado = n1 + n2
+            console.log(resultado)
+            if (resultado % 2 !== 0) {
+                alert("Número ímpar")
+            } else {
+                throw new OddNumberError("Finalizando o programa...")
+            }
+        }
+        let n1 = +prompt("N1")
+        let n2 = +prompt("N2")
         
         try {
             somar(n1, n2)
-        } catch (error) {
-            console.log(error)
+        } catch (err) {
+            if(err instanceof OddNumberError) {
+                alert(`Error name: ${err.name}\nError message: ${err.message}`)
+            }else{
+                console.log(err)
+            }
         }
    
     </script>

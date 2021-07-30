@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dobrar(numero) {
+            let resultado = numero * 2
+            if (isNaN(resultado)) {
+                throw new TypeError("O valor deve ser numérico")
+            } 
+            return resultado
+        }
+
+        let numero = +prompt("Número")
+
+        try {
+            console.log(dobrar(numero))
+        } catch (error) {
+            console.log(error.message)
+        }
+
+        
+        
+    </script>
+</body>
+</html>

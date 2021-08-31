@@ -1,8 +1,6 @@
-const { response } = require("express");
 const express = require("express");
 const app = express();
 const PORT = 3000;
-const userControlers = require("../controlers/usersControllers")
 
 
 //Importando as rotas 
@@ -33,7 +31,7 @@ app.put("/", () =>{
 
 
 
-    // Criar um usuário
+// Criar um usuário
     app.post("/users", (req, res) => {
     const { id, name, email } = req.body;
     

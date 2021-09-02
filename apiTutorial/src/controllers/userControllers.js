@@ -1,4 +1,4 @@
-const { User } = require("../src/db/models");
+const { User, Post } = require("../db/models");
 
 async function getAllUsers(req, res, next) {
     try {
@@ -8,19 +8,26 @@ async function getAllUsers(req, res, next) {
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: "Server error" });
-    }    
+    }
 }
 
-function getUserById(req, res, next) {
+async function getUserById(req, res, next) {
     const userId = req.params.id;
 
-    const user = users.find(user => user.id == userId);
+    try {
+        const user = await User.findOne({
+            where: { id: userId }
+        });
 
-    if (!user) {
-        res.status(404).json({ message: "User not found!" });
+        if (!user) {
+            res.status(404).json({ message: "User not found!" });
+        }
+
+        res.json(user);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Server error" });
     }
-
-    res.json(user);
 }
 
 async function createUser(req, res, next) {
@@ -28,69 +35,93 @@ async function createUser(req, res, next) {
 
     // Verificando se o e-mail já está cadastrado no BD
     try {
-        const [ user, created ] = await User.findOrCreate({
+        const [user, created] = await User.findOrCreate({
             where: { email },
             defaults: {
                 name,
                 password
             }
         });
-        
         if (!created) {
             return res.status(409).json({ message: "User already exists" });
         }
-    
         res.status(201).json(user);
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: "Server error" });
-    }   
+    }
 }
 
-function updateUser(req, res, next) {
+async function updateUser(req, res, next) {
     const { name } = req.body;
     const userId = req.params.id;
 
-    const user = users.find(user => user.id == userId);
+    try {
+        const user = await User.findOne({
+            where: { id: userId }
+        });
 
-    if (!user) {
-        return res.status(404).json({ message: "User not found" });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        user.name = name;
+        await user.save();
+
+        res.json(user);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Server error" });
     }
-
-    user.name = name;
-
-    res.json(user);
 }
 
-async function createPost() {
+async function deleteUser(req, res, next) {
+    // Obter o id dos parametros
+    const userId = req.params.id;
+    try {
+        // Verificar se o usuario com aquele id existe
+        const user = await User.findOne({
+            where: { id: userId }
+        });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        // Remover o usuario do bd ()
+        await user.destroy();
+        res.status(204).end();
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Server error" });
+    }
+}
+
+async function createPost(req, res, next) {
     const userId = req.params.id;
     const { title, content } = req.body;
-    const file = req.file
+    const file = req.file;
+
+    let image;
+    if (file) {
+        image = `${process.env.APP_URL}/static/${file.filename}`;
+    }
     try {
-        console.log(file);
-        res.end();
-    
+        const user = await User.findOne({ where: {id: userId }});
+
+    if (!user) {
+    return res.status(404).json({ message: "User not found!" });
+    }
+        const post = await Post.create({
+            title,
+            content,
+            image,
+            user_id: userId
+        });
+
+        res.status(201).json(post);
     } catch (error) {
         console.log(err);
         res.status(500).json({ message: "Server error" });
     }
-    }
-
-function deleteUser(req, res, next) {
-     // Obter o id dos parametros
-     const userId = req.params.id;
-    
-     // Verificar se o usuario com aquele id existe
-     const userIdInDB = users.findIndex(user => user.id == userId);
- 
-     if (userIdInDB < 0) {
-         return res.status(404).json({ message: "User not found" });
-     }
- 
-     // Remover o usuario do bd ()
-     users.splice(userIdInDB, 1);
- 
-     res.status(204).end();
 }
 
 module.exports = {

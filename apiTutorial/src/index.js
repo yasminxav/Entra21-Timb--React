@@ -2,66 +2,38 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
+// Importando as rotas
+const usersRoutes = require("./routes/usersRoutes");
 
-//Importando as rotas 
-const usersRoutes = require("./routes/usersRoutes")
+// Definindo o local dos arquivos estáticos
+app.use("/static", express.static("uploads"));
 
-//Definindo os middlewares
+// Definindo os middlewares
 app.use(express.json());
 
-//Defindo as rotas 
+// Definindo as rotas
 app.use("/users", usersRoutes);
 
-
-app.get("/",(request, response) => {
-    response.send("Hello World!");
+// Rotas da raiz "/"
+app.get("/", (request, response) => {
+response.send("Hello World");
 });
 
 app.post("/", (request, response) => {
-    response.send("Método POST");
+response.send("Método POST");
 });
 
-app.put("/", () =>{
-    response.send("Método PUT");
+app.put("/", (request, response) => {
+response.send("Método PUT");
 });
 
+app.delete("/", (request, response) => {
+response.send("Método DELETE");
+});
+
+// Rotas de usuário "/users"
 
 
 
 
-
-
-// Criar um usuário
-    app.post("/users", (req, res) => {
-    const { id, name, email } = req.body;
-    
-    const usersAlreadyExists = users.find(user => user.email === email) 
-        if(usersAlreadyExists) {
-            return res.status(409).json({message:"user already exists"})
-        }
-    
-     res.json(req.body);
-    });
-    
-    // Atualizar as informações de um usuário
-    app.put("/users", (req, res) => {
-    });
-    
-    // Remover um usuário
-    app.delete("/users/:id", (req, res) => {
-        // Obter o id dos parametros
-    const userId = req.params.id;
-        // Verificar se o usuario com aquele id existe
-    const userIdInDB = users.findIndex(user = user.id == userId);
-
-        if (userIdInDB < 0) {
-    return res.status(404).json({ message: "User not found" });
-    }
-
-    // Remover o usuario do bd ()
-    users.splice(userIdInDB, 1);
-
-    res.status(204).end();
-    });
-
-    app.listen(PORT, () => console.log("O servidor está rodando..."))
+app.listen(PORT, () => console.log("O servidor está rodando..."));
